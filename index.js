@@ -65,7 +65,7 @@ client.on("message", async message => {
   	if(message.author.id !== botconfig.ownerID) return;
     const newemb = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle(`Ping | ${Date.now() - message.createdTimestamp} ms`)
+    .setTitle(`🏓 Pong | ${Date.now() - message.createdTimestamp} ms`)
     message.channel.send({embed: newemb})
     message.delete();
 }

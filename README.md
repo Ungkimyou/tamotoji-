@@ -1,1 +1,1 @@
-# myself-tamotoji
+# selfbot

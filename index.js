@@ -27,16 +27,17 @@ client.on("message", async message => {
   
   if(command === "hastebin") {
    	if(message.author.id !== botconfig.ownerID) return;
-  hastebin(args.join(' '), "js").then(r => {
-      var hastLink = r
-      const hastEmb = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setURL(hastLink)
-      .addField('» LINK : ', `${hastLink}`)
-       message.delete(600)
-       message.channel.send(hastEmb)
-  }).catch(console.error);  
-}
+	if (!args.slice(0)
+		.join(' ')) return message.channel.send('Please, provide the text! Usage: hastebin <text>')
+		.then(message => message.delete({
+			timeout: 10000
+		}));
+	snek.post('https://hastebin.com/documents')
+		.send(args.slice(0)
+			.join(' '))
+		.then(body => {
+			message.channel.send('**Posted text to Hastebin**\nURL: https://hastebin.com/' + body.body.key);
+		});
 
   if(command === "love me ort") {
   	if(message.author.id !== botconfig.ownerID) return;

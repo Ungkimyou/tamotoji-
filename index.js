@@ -40,11 +40,11 @@ client.on("message", async message => {
   if(command === "info") {
     const dsembed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setAuthor('My Discord Info :', "https://cdn.discordapp.com/avatars/438304216893620240/56e6af0be67496ad591a1eba34075fc5.png?size=2048")
+    .setAuthor('My Discord Info :', message.author.avatarURL)
     .setDescription(":wave: Hello Guy , This is My Discord Server Please Join Now ! ")
-    .addField("Discord Server", "[Click Here To Join My Discord Server](https://discord.io/khmerempire)", true)
-    .addField("Facebook Account", "[Click Here To View My Facebook Account](https://www.facebook.com/healong.533)",true)
-    .setImage("https://cdn.discordapp.com/attachments/443385156552622083/443425287368343562/KH-logo.png")
+    .addField("Discord Server :", "[Click Here ](https://discord.io/khmerempire)", true)
+    .addField("Facebook Account :", "[Click Here ](https://www.facebook.com/healong.533)",true)
+    .setImage("http://giphy.com/gifs/watch-apple-alle-AWNxDbtHGIJDW")
     .setFooter("Content Me or DM : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
      message.channel.send(dsembed);
      message.delete();

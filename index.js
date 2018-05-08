@@ -41,10 +41,10 @@ client.on("message", async message => {
     const dsembed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setAuthor('My Discord Info :', message.author.avatarURL)
-    .setDescription(":wave: Hello Guy , This is My Discord Server Please Join Now ! ")
+    .setDescription(":wave: Hello Guy, is me TaMoToJi not JingLOng , Hehe ")
     .addField("Discord Server :", "[Click Here ](https://discord.io/khmerempire)", true)
     .addField("Facebook Account :", "[Click Here ](https://www.facebook.com/healong.533)",true)
-    .setImage("http://giphy.com/gifs/watch-apple-alle-AWNxDbtHGIJDW")
+    .setImage("https://cdn.discordapp.com/attachments/443385156552622083/443433603196518410/kanon_nakagawa_no_2_png_by_thewhitedevil66-d47m9vx.png")
     .setFooter("Content Me or DM : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
      message.channel.send(dsembed);
      message.delete();

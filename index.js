@@ -1,3 +1,4 @@
+const hastebin = require('hastebin-gen');
 const encode = require('strict-uri-encode');
 const snek = require('snekfetch');
 const fs = require("fs");
@@ -24,13 +25,17 @@ client.on("message", async message => {
   const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-  if(command === "clear") {
+  if(command === "hastebin") {
    	if(message.author.id !== botconfig.ownerID) return;
-     if(!args[0]) return message.channel.send("NOPE");
-     message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send(`» Message Has Been Clear *${args[0]}* .`).then(msg => msg.delete(3000));
- });
-
+  hastebin(args.join(' '), "js").then(r => {
+      var hastLink = r
+      const hastEmb = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setURL(hastLink)
+      .addField('» LINK : ', `${hastLink}`)
+       message.delete(600)
+       message.channel.send({embed: hastEmb})
+  }).catch(console.error);  
 }
 
   if(command === "love me ort") {

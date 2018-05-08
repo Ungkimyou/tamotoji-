@@ -49,7 +49,7 @@ client.on("message", async message => {
     .setDescription("[Avatar Link]("+mentionedUser.displayAvatarURL+")")
     .setFooter(`Requested by ${message.author.tag}`);
     message.channel.send(avatarEmbed)
-    msg.delete();
+    message.delete();
 }
 
   if(command === "say") {
@@ -65,8 +65,9 @@ client.on("message", async message => {
   	if(message.author.id !== botconfig.ownerID) return;
     const newemb = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setDescription(`Ping | ${Date.now() - message.createdTimestamp} ms`)
+    .setTitle(`Ping | ${Date.now() - message.createdTimestamp} ms`)
     message.channel.send({embed: newemb})
+    message.delete();
 }
 
 

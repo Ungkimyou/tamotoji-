@@ -53,7 +53,6 @@ client.on("message", async message => {
   if(command === "say") {
   	if(message.author.id !== botconfig.ownerID) return;
     const embed1 = new Discord.RichEmbed()
-    .setAuthor('', message.author.avatarURL)
     .setDescription(args.join(" "))
     .setColor('RANDOM')
      message.delete().catch(O_o=>{});
@@ -71,36 +70,12 @@ client.on("message", async message => {
      const helpembed = new Discord.RichEmbed()
      .setColor('RANDOM')
      .setAuthor('KimYou Commands Here :', "https://cdn.discordapp.com/avatars/364281906898141184/be03ebaac963958654c8b102d6d2b694.png?size=2048")
-     .setDescription("**Avatar : Check User Avatar**\n\n**Ping : Pong**\n\n**Cat : Random Cat Image**\n\n**Dog : Random Dog Image**\n\n**Meme : Random Meme Image**")
-     .setFooter("MySelf Create By : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881", "https://cdn.discordapp.com/avatars/364281906898141184/be03ebaac963958654c8b102d6d2b694.png?size=2048")
+     .setDescription("**Avatar : Check User Avatar**\n\n**Ping : Pong**\n\n**Meme : Random Meme Image**\n\n**Love me ort : Chech Long Love You Or No**")
+     .setFooter("Create By : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881", "https://cdn.discordapp.com/avatars/364281906898141184/be03ebaac963958654c8b102d6d2b694.png?size=2048")
      message.channel.send(helpembed);
      message.react("📥")
  }
     
-    if(command === "dog") {
-    const { body } = await superagent
-    .get('https://dog.ceo/api/breeds/image/random');
-    const embed = new Discord.RichEmbed()
-    .setColor(0x954D23)
-    .setTitle("Woof :dog2:")
-    .setImage(body.message)
-    message.channel.send({embed})
-    message.react("📖");
-    
-}
-
-  if(command === "cat") {
-    let{body} = await superagent
-    .get(`http://aws.random.cat/meow`);
-
-    let catembed = new Discord.RichEmbed()
-    .setColor("#7289DA")
-    .setTitle("Cat 🐱")
-    .setImage(body.file);
-     message.delete().catch(O_o=>{});
-     message.channel.send(catembed);
-    }
- 
     if(command === "meme") {
      meme(function(data) {
     const embed = new Discord.RichEmbed()

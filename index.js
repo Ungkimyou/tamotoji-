@@ -1,4 +1,3 @@
-const hastebin = require('hastebin-gen');
 const encode = require('strict-uri-encode');
 const snek = require('snekfetch');
 const fs = require("fs");

@@ -31,7 +31,7 @@ client.on("message", async message => {
 	.join(' '))
 	.then(body => {
 	message.channel.send('**Posted text to Hastebin**\nURL: https://hastebin.com/' + body.body.key);
-    }
+    });
   }
 
   if(command === "love me ort") {

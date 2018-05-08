@@ -24,6 +24,15 @@ client.on("message", async message => {
   const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
+  if(command === "clear") {
+   	if(message.author.id !== botconfig.ownerID) return;
+     if(!args[0]) return message.channel.send("NOPE");
+     message.channel.bulkDelete(args[0]).then(() => {
+    message.channel.send(`» Message Has Been Clear *${args[0]}* .`).then(msg => msg.delete(3000));
+ });
+
+}
+
   if(command === "love me ort") {
   	if(message.author.id !== botconfig.ownerID) return;
     const { body } = await superagent

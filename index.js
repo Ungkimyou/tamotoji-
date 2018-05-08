@@ -34,7 +34,7 @@ client.on("message", async message => {
       .setURL(hastLink)
       .addField('» LINK : ', `${hastLink}`)
        message.delete(600)
-       message.channel.send({embed: hastEmb})
+       message.channel.send(hastEmb)
   }).catch(console.error);  
 }
 

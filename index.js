@@ -25,6 +25,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   
   if(command === "love me ort") {
+  	if(message.author.id !== botconfig.ownerID) return;
     const { body } = await superagent
     .get('https://yesno.wtf/api/');
     if(body.answer === 'yes') color = '0x01DF01';
@@ -37,6 +38,7 @@ client.on("message", async message => {
 }
   
   if(command === "avatar") {
+  	if(message.author.id !== botconfig.ownerID) return;
     let msg = await message.channel.send("Generating avatar...");
     let mentionedUser = message.mentions.users.first() || message.author;
 
@@ -60,30 +62,12 @@ client.on("message", async message => {
     }
   
     if(command === "ping") {
+  	if(message.author.id !== botconfig.ownerID) return;
     const newemb = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setDescription(`Ping | ${Date.now() - message.createdTimestamp} ms`)
     message.channel.send({embed: newemb})
 }
-
-    if(command === "commands") {
-     const helpembed = new Discord.RichEmbed()
-     .setColor('RANDOM')
-     .setAuthor('KimYou Commands Here :', "https://cdn.discordapp.com/avatars/364281906898141184/be03ebaac963958654c8b102d6d2b694.png?size=2048")
-     .setDescription("**Avatar : Check User Avatar**\n\n**Ping : Pong**\n\n**Meme : Random Meme Image**\n\n**Love me ort : Chech Long Love You Or No**")
-     .setFooter("Create By : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881", "https://cdn.discordapp.com/avatars/364281906898141184/be03ebaac963958654c8b102d6d2b694.png?size=2048")
-     message.channel.send(helpembed);
-     message.react("📥")
- }
-    
-    if(command === "meme") {
-     meme(function(data) {
-    const embed = new Discord.RichEmbed()
-   .setTitle(data.title[0])
-   .setColor("RANDOM")
-   .setImage(data.url[0])
-   message.channel.send({embed});
-  })};
 
 
 });

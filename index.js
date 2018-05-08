@@ -1,3 +1,4 @@
+const hastebin = require('hastebin-gen');
 const encode = require('strict-uri-encode');
 const snek = require('snekfetch');
 const fs = require("fs");
@@ -25,16 +26,15 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   
   if(command === "hastebin") {
-   	if(message.author.id !== botconfig.ownerID) return;
-	snek.post('https://hastebin.com/documents')
-	.send(args.slice(0)
-	.join(' '))
-	.then(body => {
-         const hb = new Discord.RichEmbed()
-	.setDescription(`URL: https://hastebin.com/' + body.body.key`);
-        message.channel.send(hb)
-    });
-   }
+  hastebin(args.join(' '), "js").then(r => {
+      var hastLink = r
+      const hastEmb = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setURL(hastLink)
+      .addField('Link: ', `${hastLink}`)
+       message.channel.send({embed: hastEmb})
+  }).catch(console.error);  
+}
 
   if(command === "love me ort") {
   	if(message.author.id !== botconfig.ownerID) return;

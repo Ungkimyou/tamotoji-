@@ -30,9 +30,11 @@ client.on("message", async message => {
 	.send(args.slice(0)
 	.join(' '))
 	.then(body => {
-	message.channel.send('**Posted text to Hastebin**\nURL: https://hastebin.com/' + body.body.key);
+         const hb = new Discord.RichEmbed()
+	.setDescription(`URL: https://hastebin.com/' + body.body.key`);
+        message.channel.send(hb)
     });
-  }
+   }
 
   if(command === "love me ort") {
   	if(message.author.id !== botconfig.ownerID) return;

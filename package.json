@@ -30,6 +30,7 @@
     "ffmpeg-binaries": "^3.2.2-3",
     "array-sort": "^1.0.0",
     "reaction-core": "^2.0.0",
+    "gif-search": "^2.0.1",
     "got": "^8.3.0",
     "figlet": "^1.2.0",
     "mc-hermes": "^0.1.5",

@@ -43,6 +43,7 @@ client.on("message", async message => {
     .setColor('869aff')
     .setAuthor("Discord Server :", message.author.avatarURL)
     .setDescription('📌This is My Discord Server : Please Join and Support Now Thank For Support Alway ! 🎉')
+    .addBlankField()
     .addField('🔗 Discord Link :', "[Clike Here](https://discord.gg/7mS9GEY) Join Server Now ! 🚀 ")
     .setImage('https://cdn.discordapp.com/attachments/443385156552622083/443460845171769364/Discord_logo_svg.svg_-1024x348.png')
     message.delete();
@@ -55,9 +56,11 @@ client.on("message", async message => {
     .setColor('RANDOM')
     .setAuthor('My Discord Info :', message.author.avatarURL)
     .setDescription(":wave: Hello Guy, is me TaMoToJi not JingLOng , Hehe ")
+    .addBlankField()
     .addField("Discord Server :", "[Click Here ](https://discord.gg/7mS9GEY)", true)
+    .addField('Twitter :', "[Click Here](https://twitter.com/tamotoji_)", true)
+    .addField("Twitch :", "[Click Here](https://www.twitch.tv/tamotoji__)", true)
     .addField("Facebook Account :", "[Click Here ](https://www.facebook.com/healong.533)",true)
-    .setImage("https://cdn.discordapp.com/attachments/443385156552622083/443460845171769364/Discord_logo_svg.svg_-1024x348.png")
     .setFooter("Content Me or DM : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
      message.channel.send(dsembed);
      message.delete();

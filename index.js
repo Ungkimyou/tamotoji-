@@ -13,7 +13,6 @@ const botconfig = require('./botconfig.json');
 const superagent = require('superagent');
 const moment = require("moment");
 require("moment-duration-format");
-const PREFIX = "long ";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -24,17 +23,6 @@ client.on("message", async message => {
   if(message.author.bot) return;
   const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  
-  if(command === "meme") {
-  if(message.author.id !== botconfig.ownerID) return;
-  meme(function(data) {
-  const embed = new Discord.RichEmbed()
-  .setTitle(data.title[0])
-  .setColor("RANDOM")
-  .setImage(data.url[0])
-  message.channel.send({embed});
-  message.delete();
-  })};
   
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;
@@ -49,7 +37,6 @@ client.on("message", async message => {
     message.channel.send(discord);
   }
      
-
   if(command === "info") {
   	if(message.author.id !== botconfig.ownerID) return;
     const dsembed = new Discord.RichEmbed()
@@ -81,23 +68,6 @@ client.on("message", async message => {
     message.delete();
 }
   
-    if(command === "gif") {
-        if (message.author.bot) return;
-        if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
-
-        gifSearch.random(args[0]).then(
-           gifUrl => {
-
-          let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
-          var embed = new Discord.RichEmbed()
-            .setColor(`#${randomcolor}`)
-            .setImage(gifUrl)
-            message.channel.send(embed);
-            message.delete();
-      });
-    }
-
-
   if(command === "say") {
   	if(message.author.id !== botconfig.ownerID) return;
     const embed1 = new Discord.RichEmbed()

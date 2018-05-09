@@ -1,3 +1,4 @@
+const gifSearch = require("gif-search");
 const encode = require('strict-uri-encode');
 const snek = require('snekfetch');
 const fs = require("fs");
@@ -64,6 +65,23 @@ client.on("message", async message => {
     message.channel.send(avatarEmbed)
     message.delete();
 }
+  
+    if(command === "gif") {
+  if (message.author.bot) return;
+  if (message.channel.type == "dm") return;
+
+    if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
+
+    gifSearch.random(args[0]).then(
+        gifUrl => {
+
+        let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
+        var embed = new Discord.RichEmbed()
+            .setColor(`#${randomcolor}`)
+            .setImage(gifUrl)
+        message.channel.send(embed);
+    });
+ }
 
   if(command === "say") {
   	if(message.author.id !== botconfig.ownerID) return;

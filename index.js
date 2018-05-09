@@ -13,7 +13,7 @@ const botconfig = require('./botconfig.json');
 const superagent = require('superagent');
 const moment = require("moment");
 require("moment-duration-format");
-
+const PREFIX = "long ";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);

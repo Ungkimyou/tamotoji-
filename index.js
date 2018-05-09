@@ -14,6 +14,8 @@ const superagent = require('superagent');
 const moment = require("moment");
 require("moment-duration-format");
 
+const PREFIX = "long ";
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -36,7 +38,22 @@ client.on("message", async message => {
     message.delete();
     message.channel.send(discord);
   }
-     
+
+    if(command === "gif") {
+       if (message.author.bot) return;
+       if (message.channel.type == "dm") return;
+       if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
+
+       gifSearch.random(args[0]).then(
+       gifUrl => {
+        let randomcolor = ((1 << 24) * Math.random() | 0).toString(16)
+        var embed = new Discord.RichEmbed()
+            .setColor(`#${randomcolor}`)
+            .setImage(gifUrl)
+        message.channel.send(embed);
+    });
+ }
+
   if(command === "info") {
   	if(message.author.id !== botconfig.ownerID) return;
     const dsembed = new Discord.RichEmbed()

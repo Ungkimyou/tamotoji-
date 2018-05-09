@@ -26,6 +26,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   
   if(command === "meme") {
+  if(message.author.id !== botconfig.ownerID) return;
   meme(function(data) {
   const embed = new Discord.RichEmbed()
   .setTitle(data.title[0])
@@ -36,6 +37,7 @@ client.on("message", async message => {
   })};
   
   if(command === "discord") {
+  	if(message.author.id !== botconfig.ownerID) return;
     const discord = new Discord.RichEmbed()
     .setColor('869aff')
     .setAuthor("Discord Server :", message.author.avatarURL)
@@ -49,6 +51,7 @@ client.on("message", async message => {
      
 
   if(command === "info") {
+  	if(message.author.id !== botconfig.ownerID) return;
     const dsembed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setAuthor('My Discord Info :', message.author.avatarURL)

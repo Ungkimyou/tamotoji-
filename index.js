@@ -32,7 +32,7 @@ client.on("message", async message => {
     .setDescription('📌This is My Discord Server : Please Join and Support Now Thank For Support Alway ! 🎉')
     .addBlankField()
     .addField('🔗 Discord Link :', "[Clike Here](https://discord.gg/7mS9GEY) Join Server Now ! 🚀 ")
-    .setImage('https://cdn.discordapp.com/attachments/443385156552622083/443460845171769364/Discord_logo_svg.svg_-1024x348.png')
+    .setImage('https://cdn.discordapp.com/attachments/364284401497931786/443691032048041984/Discord.logo.png')
     message.delete();
     message.channel.send(discord);
   }

@@ -79,7 +79,7 @@ client.on("message", async message => {
             .setImage(gifUrl)
             message.channel.send(embed);
       });
-   
+    }
 
 
   if(command === "say") {

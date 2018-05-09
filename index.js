@@ -67,21 +67,20 @@ client.on("message", async message => {
 }
   
     if(command === "gif") {
-  if (message.author.bot) return;
-  if (message.channel.type == "dm") return;
+        if (message.author.bot) return;
+        if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
 
-    if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
+        gifSearch.random(args[0]).then(
+           gifUrl => {
 
-    gifSearch.random(args[0]).then(
-        gifUrl => {
-
-        let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
-        var embed = new Discord.RichEmbed()
+          let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
+          var embed = new Discord.RichEmbed()
             .setColor(`#${randomcolor}`)
             .setImage(gifUrl)
-        message.channel.send(embed);
-    });
- }
+            message.channel.send(embed);
+      });
+   
+
 
   if(command === "say") {
   	if(message.author.id !== botconfig.ownerID) return;

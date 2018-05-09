@@ -40,7 +40,7 @@ client.on("message", async message => {
   if(command === "info") {
   	if(message.author.id !== botconfig.ownerID) return;
     const dsembed = new Discord.RichEmbed()
-    .setColor('RANDOM')
+    .setColor('#da9fff')
     .setAuthor('My Discord Info :', message.author.avatarURL)
     .setDescription(":wave: Hello Guy, its me TaMoToJi not JingLOng , Hehe ")
     .addBlankField()
@@ -48,7 +48,8 @@ client.on("message", async message => {
     .addField('Twitter :', "[Click Here](https://twitter.com/tamotoji_)", true)
     .addField("Twitch :", "[Click Here](https://www.twitch.tv/tamotoji__)", true)
     .addField("Facebook Account :", "[Click Here ](https://www.facebook.com/healong.533)",true)
-    .setFooter("Content Me or DM : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
+    .setImage('https://cdn.discordapp.com/attachments/364284401497931786/443685673543663618/TAMOTOJI.png')
+    .setFooter("Content Me or DM : TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881", message.author.avatarURL)
      message.channel.send(dsembed);
      message.delete();
   }

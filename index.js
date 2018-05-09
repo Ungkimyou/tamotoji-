@@ -25,18 +25,14 @@ client.on("message", async message => {
   const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-  if(command === "love me ort") {
-  	if(message.author.id !== botconfig.ownerID) return;
-    const { body } = await superagent
-    .get('https://yesno.wtf/api/');
-    if(body.answer === 'yes') color = '0x01DF01';
-    if(body.answer === 'no') color = '0xFF0000';
-    const embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setImage(`${body.image}`)
-    message.channel.send(`The magic API says: **${body.answer}**`, {embed});
-
-}
+  if(command === "meme") {
+  meme(function(data) {
+  const embed = new Discord.RichEmbed()
+  .setTitle(data.title[0])
+  .setColor("RANDOM")
+  .setImage(data.url[0])
+  message.channel.send({embed});
+  })};
   
   if(command === "discord") {
     const discord = new Discord.RichEmbed()

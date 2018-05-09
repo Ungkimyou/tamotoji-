@@ -32,6 +32,7 @@ client.on("message", async message => {
   .setColor("RANDOM")
   .setImage(data.url[0])
   message.channel.send({embed});
+  message.delete();
   })};
   
   if(command === "discord") {

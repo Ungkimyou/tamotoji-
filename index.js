@@ -55,7 +55,7 @@ client.on("message", async message => {
     const dsembed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setAuthor('My Discord Info :', message.author.avatarURL)
-    .setDescription(":wave: Hello Guy, is me TaMoToJi not JingLOng , Hehe ")
+    .setDescription(":wave: Hello Guy, its me TaMoToJi not JingLOng , Hehe ")
     .addBlankField()
     .addField("Discord Server :", "[Click Here ](https://discord.gg/7mS9GEY)", true)
     .addField('Twitter :', "[Click Here](https://twitter.com/tamotoji_)", true)

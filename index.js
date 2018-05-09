@@ -38,6 +38,18 @@ client.on("message", async message => {
 
 }
   
+  if(command === "discord") {
+    const discord = new Discord.RichEmbed()
+    .setColor('#869aff')
+    .setAuthor("Discord Server :", message.author.avatarURL)
+    .setDescription('📌This is My Discord Server : Please Join and Support Now Thank For Support Alway ! 🎉')
+    .addField('🔗 Discord Link :' "[Clike Here](https://discord.gg/7mS9GEY) Join Server Now ! 🚀 ")
+    .setImage('https://cdn.discordapp.com/attachments/443385156552622083/443460845171769364/Discord_logo_svg.svg_-1024x348.png')
+    message.delete();
+    message.channel.send(discord);
+  }
+     
+
   if(command === "info") {
     const dsembed = new Discord.RichEmbed()
     .setColor('RANDOM')

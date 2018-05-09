@@ -78,6 +78,7 @@ client.on("message", async message => {
             .setColor(`#${randomcolor}`)
             .setImage(gifUrl)
             message.channel.send(embed);
+            message.delete();
       });
     }
 

@@ -145,6 +145,8 @@ client.on("message", async message => {
 
     const filter2 = (reaction) => reaction.emoji.name === '☺';
     const collector2 = pollTitle.createReactionCollector(filter2, { time: 15000 });
+
+    message.delete();
 };
 
 });

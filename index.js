@@ -127,7 +127,7 @@ client.on("message", async message => {
    
    if(command === "poll") {
  	if(message.author.id !== botconfig.ownerID) return;
-  if (!args.join(' ')) return message.channel.send('Usage: poll <title>').then(msg => msg.delete({timeout: 10000}));
+  if (!args.join(' ')) return message.channel.send('Usage: poll <title>').then(msg => msg.delete({timeout: 1000}));
   
   const embed = new Discord.RichEmbed()
     .setTitle(args.join(' '))
@@ -136,15 +136,18 @@ client.on("message", async message => {
       await pollTitle.react(`👍`);
       await pollTitle.react(`❤`);
       await pollTitle.react(`☺`);
-  
+      await pollTitle.react(`🎉`);
+      await pollTitle.react(`💯`);  
     const filter = (reaction) => reaction.emoji.name === '👍';
     const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
-  
     const filter1 = (reaction) => reaction.emoji.name === '❤';
     const collector1 = pollTitle.createReactionCollector(filter1, { time: 15000 });
-
-    const filter2 = (reaction) => reaction.emoji.name === '☺';
-    const collector2 = pollTitle.createReactionCollector(filter2, { time: 15000 });
+    const filter3 = (reaction) => reaction.emoji.name === '☺';
+    const collector3 = pollTitle.createReactionCollector(filter3, { time: 15000 });
+    const filter4 = (reaction) => reaction.emoji.name === '🎉';
+    const collector4 = pollTitle.createReactionCollector(filter4, { time: 15000 });
+    const filter5 = (reaction) => reaction.emoji.name === '💯';
+    const collector5 = pollTitle.createReactionCollector(filter5, { time: 15000 });
 
     message.delete();
 };

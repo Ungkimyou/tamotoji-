@@ -54,6 +54,16 @@ client.on("message", async message => {
         message.delete();
     });
  }
+ 
+  if(command === "meme") {
+  meme(function(data) {
+  const embed = new Discord.RichEmbed()
+  .setTitle(data.title[0])
+  .setColor("RANDOM")
+  .setImage(data.url[0])
+  message.channel.send({embed});
+  message.delete();
+  })};
 
   if(command === "info") {
   	if(message.author.id !== botconfig.ownerID) return;

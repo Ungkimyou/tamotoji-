@@ -15,7 +15,7 @@ const superagent = require('superagent');
 const moment = require("moment");
 require("moment-duration-format");
 
-const PREFIX = "long ";
+const PREFIX = "//";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -34,6 +34,8 @@ client.on("message", async message => {
     .setAuthor("Discord Server :", message.author.avatarURL)
     .setDescription('📌This is My Discord Server : Please Join and Support Now Thank For Support Alway ! 🎉')
     .addBlankField()
+    .setURL("tamotoji.tk")
+    .addField('🌎 Discord Website :', "[Click Here](tamotoji.tk) View Here ! 💌")
     .addField('🔗 Discord Link :', "[Clike Here](https://discord.gg/7mS9GEY) Join Server Now ! 🚀 ")
     .setImage('https://cdn.discordapp.com/attachments/364284401497931786/443691032048041984/Discord.logo.png')
     message.delete();

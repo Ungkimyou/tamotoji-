@@ -41,6 +41,7 @@ client.on("message", async message => {
   }
 
     if(command === "gif") {
+  	if(message.author.id !== botconfig.ownerID) return;
        if (message.author.bot) return;
        if (!args[0]) return message.channel.send("`"+PREFIX+"gif <gname>`");
 
@@ -56,6 +57,7 @@ client.on("message", async message => {
  }
  
   if(command === "meme") {
+  	if(message.author.id !== botconfig.ownerID) return;
   meme(function(data) {
   const embed = new Discord.RichEmbed()
   .setTitle(data.title[0])

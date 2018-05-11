@@ -129,7 +129,7 @@ client.on("message", async message => {
    
    if(command === "poll") {
  	if(message.author.id !== botconfig.ownerID) return;
-  if (!args.join(' ')) return message.channel.send('Usage: poll <title>').then(msg => msg.delete({timeout: 1000}));
+  if (!args.join(' ')) return message.channel.send('Usage: poll <title>').then(msg => msg.delete({timeout: 100}));
   
   const embed = new Discord.RichEmbed()
     .setTitle(args.join(' '))

@@ -33,12 +33,9 @@ client.on("message", async message => {
     message.channel.send("**[https://discord.gg/7mS9GEY ]**");
   }
 
-  if(command === "sayembed") {
+  if(command === "reactsay") {
   let botmessage = args.join(" ");
-  const embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setTitle(botmessage)
-    const pollTitle = await message.channel.send({ embed });
+    const pollTitle = await message.channel.send(botmessage);
       await pollTitle.react(`444878652090613763`);
       await pollTitle.react(`444873045488697375`);
       await pollTitle.react(`444873046776348679`);

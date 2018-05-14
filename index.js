@@ -34,6 +34,7 @@ client.on("message", async message => {
   }
 
   if(command === "reactsay") {
+  message.delete();
   let botmessage = args.join(" ");
     const pollTitle = await message.channel.send(botmessage);
       await pollTitle.react(`444878652090613763`);
@@ -51,7 +52,7 @@ client.on("message", async message => {
     const collector4 = pollTitle.createReactionCollector(filter4, { time: 150 });
     const filter5 = (reaction) => reaction.emoji.name === '444873284622745610';
     const collector5 = pollTitle.createReactionCollector(filter5, { time: 150 });
-    message.delete();
+
 };
 
     if(command === "gif") {

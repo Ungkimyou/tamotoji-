@@ -51,6 +51,16 @@ client.on("message", async message => {
   const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
+  if(command === "sleep") {
+  const timer = moment.duration(parseInt(interval, 10), period).asMilliseconds();
+  console.log(timer);
+  client.destroy();
+  setTimeout(()=>{
+    process.exit(1);
+  }, timer);
+  };
+
+
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;
     message.delete();

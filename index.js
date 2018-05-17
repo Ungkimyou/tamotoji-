@@ -59,7 +59,7 @@ client.on("message", async message => {
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;
     message.delete();
-    message.channel.send(`__**DISCORD : MIRAI KURIYAMA**__\n• Gaming Server\n•Fun Server\n•Community Server\n•Memes Server\n\n**[https://discord.gg/PEtdUmm ]**`);
+    message.channel.send(`__**DISCORD : MIRAI KURIYAMA**__\n\n**•  Gaming Server**\n**•  Fun Server**\n**• Community Server**\n**•  Memes Server**\n\n**[https://discord.gg/PEtdUmm ]**`);
   }
 
   if(command === "reactsay") {

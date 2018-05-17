@@ -15,7 +15,7 @@ const superagent = require('superagent');
 const moment = require("moment");
 require("moment-duration-format");
 
-const PREFIX = "//";
+const PREFIX = "..";
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);

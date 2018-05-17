@@ -54,7 +54,7 @@ client.on("message", async message => {
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;
     message.delete();
-    message.channel.send("**[https://discord.gg/7mS9GEY ]**");
+    message.channel.send("**[https://discord.gg/PEtdUmm ]**");
   }
 
   if(command === "reactsay") {

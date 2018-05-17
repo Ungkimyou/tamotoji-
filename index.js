@@ -21,6 +21,30 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on("message", message => {
+  if (message.author !== client.user) return;
+  if (!message.content.startsWith(botconfig.prefix)) return; // ignore messages that... you know the drill.
+  // We covered this already, yay!
+  const params = message.content.split(" ").slice(1);
+  if (message.content.startsWith(botconfig.prefix + "prune")) {
+    // get number of messages to prune
+    let messagecount = parseInt(params[0]);
+    // get the channel logs
+    message.channel.fetchMessages({
+        limit: 100
+      })
+      .then(messages => {
+        let msg_array = messages.array();
+        // filter the message to only your own
+        msg_array = msg_array.filter(m => m.author.id === client.user.id);
+        // limit to the requested number + 1 for the command message
+        msg_array.length = messagecount + 1;
+        // Has to delete messages individually. Cannot use `deleteMessages()` on selfbots.
+        msg_array.map(m => m.delete().catch(console.error));
+      });
+  }
+})
+
 
 client.on("message", async message => {
   if(message.author.bot) return;

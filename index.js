@@ -51,15 +51,10 @@ client.on("message", async message => {
   const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-  if(command === "sleep") {
-  const timer = moment.duration(parseInt(interval, 10), period).asMilliseconds();
-  console.log(timer);
-  client.destroy();
-  setTimeout(()=>{
-    process.exit(1);
-  }, timer);
-  };
-
+  if(command === "checkinvite") {
+  const members = message.guild.members.filter(member => member.user.presence.game && /(discord\.(gg|io|me|li)\/.+|discordapp\.com\/invite\/.+)/i.test(member.user.presence.game.name));
+  return message.channel.send(members.map(member => `\`${member.id}\` ${member.displayName}`).join("\n") || "Nobody has an invite link as game name.");
+};
 
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;

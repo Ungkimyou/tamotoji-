@@ -59,7 +59,7 @@ client.on("message", async message => {
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;
     message.delete();
-    message.channel.send(`**DISCORD** : __**MIRAI KURIYAMA**__\n\n**•  Gaming Server**\n**•  Fun Server**\n**•  Community Server**\n**•  Memes Server**\n\n**[https://discord.gg/PEtdUmm ]**`);
+    message.channel.send(`**DISCORD** : __**MIRAI KURIYAMA**__\n\n**•  Gaming Server**\n**•  Fun Server**\n**•  Community Server**\n**•  Memes Server**\n\n**[https://discord.gg/ZWWD7zT ]**`);
   }
 
   if(command === "reactsay") {
@@ -118,7 +118,7 @@ client.on("message", async message => {
     .setAuthor('My Discord Info :', message.author.avatarURL)
     .setDescription(":wave: Hello Guy, its me TaMoToJi not JingLOng , Hehe ")
     .addBlankField()
-    .addField("Discord Server :", "[Click Here ](https://discord.gg/PEtdUmm)", true)
+    .addField("Discord Server :", "[Click Here ](https://discord.gg/ZWWD7zT)", true)
     .addField('Twitter :', "[Click Here](https://twitter.com/tamotoji_)", true)
     .addField("Twitch :", "[Click Here](https://www.twitch.tv/tamotoji__)", true)
     .addField("Facebook Account :", "[Click Here ](https://www.facebook.com/healong.533)",true)

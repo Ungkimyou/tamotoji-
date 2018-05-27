@@ -57,6 +57,8 @@ client.on("message", async message => {
 };
 
   if(command === "magik") {
+	  message.delete();
+	  if(message.author.id !== botconfig.ownerID) return;
          let target = message.mentions.users.first() || message.author;
         let wait = await message.channel.send('Adding the magik...')
     

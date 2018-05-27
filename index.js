@@ -70,7 +70,7 @@ client.on("message", async message => {
         await wait.delete()
     
         return message.channel.send(`https://discord.services/api/magik?url=${userAvatar}`) 
-	},
+	}
     
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;

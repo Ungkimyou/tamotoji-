@@ -56,6 +56,22 @@ client.on("message", async message => {
   return message.channel.send(members.map(member => `\`${member.id}\` ${member.displayName}`).join("\n") || "Nobody has an invite link as game name.");
 };
 
+  if(command === "magik") {
+         let target = message.mentions.users.first() || message.author;
+        let wait = await message.channel.send('Adding the magik...')
+    
+        let userAvatar = (target.displayAvatarURL);
+        if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
+            userAvatar = args.join(' ').replace(/gif|webp/g, 'png')
+        }
+    
+        let res = await snek.get(`https://discord.services/api/magik?url=${userAvatar}`)
+    
+        await wait.delete()
+    
+        return message.channel.send(`https://discord.services/api/magik?url=${userAvatar}`) 
+	},
+    
   if(command === "discord") {
   	if(message.author.id !== botconfig.ownerID) return;
     message.delete();
